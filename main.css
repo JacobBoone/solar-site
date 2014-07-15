@@ -1,39 +1,53 @@
+body{
+	font-family: fantasy;
+}
+
 .navbar-default{
 	background-color: rgb(118,173,246);
 }
 
 h2 {
 	color: white;
+
 }
 
-#chargecontroller{
-	width: 100px;
-	height: 75px;
-}
-#chargecontroller:hover{
+/*#chargecontroller{
+	width: 90px;
+	height: 65px;
+}*/
+/*#chargecontroller:hover{
+	width: 110px;
+	height: 85px;
+}*/
+
+
+.solar-icon{
 	width: 110px;
 	height: 85px;
 }
 
-
-.solar-icon{
-	width: 150px;
-	height: 150px;
-}
-
 .solar-icon:hover{
-	border-color: solid 2px skyblue;
-	width: 160px;
-	height: 160px;
+	/*border-color: solid 2px skyblue;*/
+	/*background-color: rgb(118,173,246);*/
+	/*width: 120px;
+	height: 105px;*/
+	border-radius: 25px;
+
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
 }
 
 .icon-right-big{
 	font-size: 10px;
+	top: 40px;
+
 }
 
 .content{
 	width: 70%;
 	height: 30px;
+}
 
-
+#full-system{
+	padding-top: 50px;
 }

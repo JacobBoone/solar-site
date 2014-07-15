@@ -12,11 +12,11 @@ var SolarItem = function(name, description, image){
 
 
 // Declaring the images as objects
-var imgPanel = $('<img id="solarpanel" class="solar-icon col-md-2">').attr('src', 'images/panel.png');
-var imgController = $('<img id="chargecontroller" class="solar-icon col-md-1">').attr('src', 'images/controller.png');
-var imgBattery = $('<img id="battery" class="solar-icon col-md-2">').attr('src', 'images/batt2.png');
-var imgInverter = $('<img id="inverter" class="solar-icon col-md-1">').attr('src', 'images/inverter.png');
-var imgHome = $('<img id="house" class="solar-icon col-md-2">').attr('src', 'images/home.png');
+var imgPanel = $('<img id="solarpanel" class="solar-icon col-xs-2">').attr('src', 'images/panel.png');
+var imgController = $('<img id="chargecontroller" class="solar-icon col-xs-1">').attr('src', 'images/controller.png');
+var imgBattery = $('<img id="battery" class="solar-icon col-xs-2">').attr('src', 'images/batt2.png');
+var imgInverter = $('<img id="inverter" class="solar-icon col-xs-1">').attr('src', 'images/inverter.png');
+var imgHome = $('<img id="house" class="solar-icon col-xs-2">').attr('src', 'images/home.png');
 
 // Bank Items with 'description' and the varible for the the image objects
 var panel = new SolarItem('solarpanel', 'Panel description', imgPanel);
@@ -41,7 +41,7 @@ $(document).on('ready', function() {
 					$('#full-system').append(arr[i].image)
 				}
 				else{
-					$('#full-system').append(arr[i].image).append('<i class="icon-right-big col-md-1"></i>')
+					$('#full-system').append(arr[i].image).append('<i class="icon-right-big col-xs-1"></i>')
 				}
 			}
 		}
@@ -51,7 +51,7 @@ $(document).on('ready', function() {
 		
 		$('.solar-icon').click(function(){
 			$('#information').empty()
-			var info = $('<div class="container information"><div class="jumbotron"><div class="row"><p class="col-md-12 description"></p></div></div></div>')
+			var info = $('<div class="container information"><div class="jumbotron"><div class="row"><p class="col-xs-12 description"></p></div></div></div>')
 			$('#information').append(info)
 			// $('.information').append(info)
 			
