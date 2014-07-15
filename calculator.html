@@ -30,42 +30,48 @@
 			
 
 
-			<form class="form-inline" role="form">
-				<div class="form-group">
-					
-    				<input type="email" class="form-control" id="appliance" placeholder="Appliance">
-				</div>
+			<form class="form-inline loadEntry" role="form">
+				<div class="main-form">
+					<div class="form-group">
+						
+	    				<input type="text" class="form-control" id="appliance" placeholder="Appliance">
+					</div>
 
-				<div class="form-group">
-				
-    				<input type="email" class="form-control" id="appliance" placeholder="Quantity">
-				</div>
-				<span>X</span>
-				<div class="form-group">
+					<div class="form-group">
 					
-    				<input type="email" class="form-control" id="appliance" placeholder="AC Watts">
-				</div>
-				<span>X</span>
-				<div class="form-group">
+	    				<input type="number" class="form-control quantity" id="quantity" placeholder="Quantity">
+					</div>
+					<span>X</span>
+					<div class="form-group">
+						
+	    				<input type="number" class="form-control ac-watts" id="ac-watts" placeholder="AC Watts">
+					</div>
+					<span>X</span>
+					<div class="form-group">
+					
+	    				<input type="number" class="form-control hours-on" id="hours-on" placeholder="Hours On">
+					</div>
+					<span>=</span>
+					<div class="form-group">
+					
+	    				<input type="number" class="form-control total-day" id="total-day" placeholder="Watt hrs. per day">
+					</div>
 				
-    				<input type="email" class="form-control" id="appliance" placeholder="Hours On">
 				</div>
-				<span>=</span>
-				<div class="form-group">
-				
-    				<input type="email" class="form-control" id="appliance" placeholder="Watt hrs. per day">
-				</div>
-				<div class='row'>
-				<button type="submit" class="btn btn-default">Add Load</button>
-				<button type="submit" class="btn btn-default">Submit</button>
-				<div>
 			</form>
 
+
+				<div class='row'>
+					
+				<button type="submit" class="btn btn-default add-load">Add Load</button>
+				<button type="submit" class="btn btn-default add-total">Total</button>
+				</div>
+
 				<!-- <div class="col-xs-2"></div> -->
+			</div>
 
 
-
-	  			<!-- <div class="col-xs-2"></div> -->
+	  	</div>		<!-- <div class="col-xs-2"></div> -->
 
 
 
@@ -75,7 +81,7 @@
 
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
-  <script src="main.js"></script>
+  <script src="calc.js"></script>
 
 </body>
 

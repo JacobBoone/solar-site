@@ -31,56 +31,63 @@ var system = [panel, controller, battery, inverter, home];
 
 
 
-$(document).on('ready', function() {
-		// // loop thru the array of system to display the image on the page
-		var putimagesonpage = function(arr){
-			// var arrSystem = arr.image.splice()['~~>']
-			for (var i = 0; i < arr.length; i++) {
-				
-				if(i === arr.length-1){
-					$('#full-system').append(arr[i].image)
-				}
-				else{
-					$('#full-system').append(arr[i].image).append('<i class="icon-right-big col-xs-1"></i>')
-				}
-			}
+// // loop thru the array of system to display the image on the page
+var putimagesonpage = function(arr){
+	// var arrSystem = arr.image.splice()['~~>']
+	for (var i = 0; i < arr.length; i++) {
+		$('#full-system').append(arr[i].image)
+		if(i !== arr.length-1){
+			$('#full-system').append('<i class="icon-right-big col-xs-1"></i>')
 		}
+		
+	}
+}
+
+
+
+
+
+
+$(document).on('ready', function() {
 
 		putimagesonpage(system);
-		
+		$('#information').slideUp(800)
 		
 		$('.solar-icon').click(function(){
-			$('#information').empty()
-			var info = $('<div class="container information"><div class="jumbotron desc-slide"><i class="icon-target-2"></i><div class="row"><p class="col-xs-12 description"></p></div></div></div>')
-			$('#information').append(info);
+			var self =this;
+			$('#information').slideUp(800)
+			$('#information').queue(function(){
+				$('#information').empty()
+				console.log('work')
+				var info = $('<div class="container information"><div class="jumbotron desc-slide"><i class="icon-target-2 desc-close"></i><div class="row"><p class="col-xs-12 description"></p></div></div></div>')
+				$('#information').append(info);
 
+				
+				var idVal= $(self).attr('id')
+				var output = _.findWhere(system,{name: idVal})
+					console.log(output)
+				$('.description').append(output.description)
+				$(this).dequeue()
+// closes any info
+				$('.desc-close').click(function(){
+					$('#information').slideUp(800).empty()
+				})
+
+// experiment to close more fluidly
+				// $('.desc-close').click(function(){
+				// 	$('#information').slideUp(600).empty()
+				// })
+
+			})
 			
-			var idVal= $(this).attr('id')
-			var output = _.findWhere(system,{name: idVal})
-				console.log(output)
-			$('.description').append(output.description)
-			// $('.description').slideDown(600)
+			
+			$('#information').slideDown(800)
 		
 			console.log("clicked")
 
-			$('.icon-target-2').click(function(){
-				$('#information').slideUp(600).empty().slideDown()
-			
 
-			})
 
 		});
-
-
-// Calculator
-
-
-
-
-
-
-
-
 
 
 });

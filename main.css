@@ -87,7 +87,7 @@ text-decoration: underline;
 	/*padding-right: 5px;*/
 	/*height: 50px;*/
 }
-.icon-target-2{
+.desc-close{
 	float:right;
 	color: grey;
 }
@@ -107,3 +107,8 @@ text-decoration: underline;
 	outline: none;
 }
 
+.margin{
+	margin-top: 3px;
+	margin-left: 2px;
+	margin-right: 2px;
+}
