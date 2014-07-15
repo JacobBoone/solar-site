@@ -3,7 +3,9 @@ body{
 }
 
 .navbar-default{
-	background-color: rgb(118,173,246);
+	/*background-color: rgb(118,173,246);*/
+	/*background-image: url('http://www.wallspick.com/wp-content/uploads/2014/04/sunny-day1.jpg');*/
+	background-image: url('http://balancecube.net/wp-content/uploads/2012/04/dsc_0494-edit.jpg');
 }
 
 h2 {
@@ -11,6 +13,9 @@ h2 {
 
 }
 
+h2:hover{
+text-decoration: underline;
+}
 /*#chargecontroller{
 	width: 90px;
 	height: 65px;
@@ -27,15 +32,19 @@ h2 {
 }
 
 .solar-icon:hover{
-	/*border-color: solid 2px skyblue;*/
-	/*background-color: rgb(118,173,246);*/
-	/*width: 120px;
-	height: 105px;*/
 	border-radius: 25px;
-
     border-color: #9ecaed;
-    box-shadow: 0 0 10px #9ecaed;
+    box-shadow: 0 0 50px #9ecaed;
+
 }
+
+#house:hover{
+  box-shadow: 0 0 100px yellow;
+  background-color:  yellow;
+}
+
+
+
 
 .icon-right-big{
 	font-size: 10px;
@@ -50,4 +59,51 @@ h2 {
 
 #full-system{
 	padding-top: 50px;
+	padding-bottom: 50px;
+	padding-left: 50px;
 }
+
+
+
+.slidedown{
+	width: 100%;
+	font-size: 20px;
+	background-color: yellow;
+}
+
+
+
+.desc-slide{
+	/*background-color: offwhite;*/
+	padding-right: 10px;
+}
+
+.jumbotron{
+	margin-bottom: 2px;
+}
+
+.description{
+	/*padding-top: 10px;*/
+	/*padding-right: 5px;*/
+	/*height: 50px;*/
+}
+.icon-target-2{
+	float:right;
+	color: grey;
+}
+
+.btn-default{
+	outline: none;
+	margin-top: 10px;
+	border-radius: 100px;
+}
+
+
+.btn:focus{
+	outline: none;
+}
+
+.btn-default:focus{
+	outline: none;
+}
+
