@@ -27,7 +27,8 @@ $(document).on('ready', function() {
 
 				$(this).find('.total-day').val(quant*energy*timeon)
 				
-				
+
+		
 				// var totalTime =$(this).find('.total-day').val()
 				// $(self).find('<span> Total: ' +totalTime ' </span')
 
