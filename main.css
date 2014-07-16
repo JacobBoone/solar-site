@@ -194,3 +194,12 @@ html, body {
 
 
 }
+
+
+
+.house-shine{
+	/*border-radius: 25px;*/
+    /*border-color: orange;*/
+    text-shadow: 2px 2px yellow;
+
+}

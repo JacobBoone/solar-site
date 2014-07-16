@@ -143,9 +143,14 @@ var Simulator = (function(){
 				else if (battLevel < 95 && battLevel >=50){
 					$('.batt').css("color",'yellow')
 					$('.house').css('color', 'orange')
+					$('.house').addClass('house-shine')
 				}
 				else{
 					$('.batt').css("color",'red')
+					$('.house').css('color', 'black')
+					$('.house').removeClass('house-shine')
+					// $('.house').addClass('house-shine')
+
 				}
 			},2000);
 
