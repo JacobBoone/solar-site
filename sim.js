@@ -1,4 +1,8 @@
-
+//  Need logic to:
+// 1. Emit random rays of energy from sun.
+// 2. panel will collect x% of the energy from random rays and pass x% to battery
+// 3. battery collects power from panel pulls it when < full, does not collect >= full, energy amount available viewable by color, green, yellow, red
+// 4. power use in home, can increase/ decrease on clicks which increases rate from battery< if battery is 'low' power will shut off (view by house color?)
 
 var Simulator = (function(){
 
@@ -6,7 +10,7 @@ var Simulator = (function(){
 // constants
 	var NUM_SUNS= 1;
 
-	// var batteryAutoIncrement = 0;
+
 
 // Sun constructor
 	var	Sun = function(){
@@ -22,6 +26,11 @@ var Simulator = (function(){
 
 		return this.el;
 	}
+	Sun.prototype.getRays =function(){
+
+		return Math.floor(Math.random() * (20 - 0)) + 0;
+
+	}
 
 
 // Panel constructor
@@ -33,11 +42,11 @@ var Simulator = (function(){
 		return this.el;
 	}
 
+
+
 // Battery constructor
 	var	Battery = function(){
-		// this.charge = 100;
-		// this.status = 'full';
-		// this.id = batteryAutoIncrement++;
+
 
 	}
 	Battery.prototype.create =function(){
@@ -45,10 +54,6 @@ var Simulator = (function(){
 		return this.el;
 	}
 
-	// Battery.prototype.update =function(){
-	// 	this.el
-
-	// }
 
 
 // House constructor
@@ -80,10 +85,10 @@ var Simulator = (function(){
 
 
 
-
 //  create the homebase
 	var init =function(){
 		console.log('init called')
+		
 		var panel = new Panel();
 		var battery = new Battery();
 		var house = new House();
@@ -91,14 +96,56 @@ var Simulator = (function(){
 		$('.sky').append(homebase.create());
 
 		// create sun in the sky
-		for(var i=0; i<NUM_SUNS; i++) {
+		// for(var i=0; i<NUM_SUNS; i++) {
 			var sun = new Sun();
 			var sunEl = sun.create();
+			var battLevel = 0;
+			var houseUse = 0;
 			$('.sky').append(sunEl);
+			 setInterval(function(){
+				sunEl.remove()
+				var sumRays = sun.getRays();
+				battLevel+=sumRays;
+				console.log(battLevel)
+				var sunSize = sumRays*10;
+				// console.log(sunSize)
+				sunEl.css('font-size', sunSize)
+				$('.sky').append(sunEl);
+				console.log(sumRays)
+
+				if (battLevel > 100){
+					battLevel = 100
+				}
+				
+// // house stuff
+// 				$('.house').click(function(){
+// 					this+=battLevel
+
+// 				})
+// 				if (houseUse >=1){
+// 					$('.house').css('color', 'orange')
+// 				}
+
+
+
+
+				if (battLevel >= 100){
+					$('.batt').css("color",'green')
+				}
+				else if (battLevel < 100 && battLevel >=50){
+					$('.batt').css("color",'yellow')
+				}
+				else{
+					$('.batt').css("color",'red')
+				}
+			},2000);
+
 			suns.push(sun);
 			
+			
+			
 		}
-	}
+	// }
 
 
 	return{
@@ -115,6 +162,7 @@ $(document).on('ready', function() {
 console.log('doc ready')
 	
 	Simulator.init();
+
 
 
 

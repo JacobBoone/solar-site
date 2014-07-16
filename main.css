@@ -175,6 +175,6 @@ html, body {
 .sun{
 	color: yellow;
 	position: absolute;
-	font-size: 100px;
+	/*font-size: 100px;*/
 
 }
