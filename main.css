@@ -60,7 +60,7 @@ text-decoration: underline;
 #full-system{
 	padding-top: 50px;
 	padding-bottom: 50px;
-	padding-left: 50px;
+	padding-left: 65px;
 }
 
 
@@ -92,7 +92,7 @@ text-decoration: underline;
 	color: grey;
 }
 
-.btn-default{
+.btn-default, .btn-success{
 	outline: none;
 	margin-top: 10px;
 	border-radius: 100px;
@@ -111,4 +111,70 @@ text-decoration: underline;
 	margin-top: 3px;
 	margin-left: 2px;
 	margin-right: 2px;
+}
+
+/* simulator*/
+
+
+
+
+
+html, body {
+	height: 100%;
+}
+
+.sky {
+	height: 75%;
+	position: relative;
+	text-align: center;
+	background-image: url('http://img2.blog.zdn.vn/52443538.jpg');
+	/*background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSesaB44OsHwJe6PZqAkbICkA0yZddW13Bfr7l9Hzn3UX41svwo');*/
+	/*background-image: url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQAXpwTweIm9uQYOBPttVJuNVMCYs9RjYcAnoRC8O3ZgYAg5qTl');*/
+	background-size: 100%;
+	background-attachment: fixed;
+}
+
+.earth {
+	height: 25%;
+	/*background-color: black;*/
+	background: url('http://adrianpayne.me/game/assets/images/grass.png');
+	/*background: url('http://friezeprojectseast.org/wp-content/themes/frieze/_/imgs/grass.jpg');*/
+}
+
+.homebase{
+	position: absolute;
+	width: 100%
+}
+.house{
+	position: absolute;
+	font-size: 200px;
+	/*float: right;*/
+	bottom: -85px;
+	left:65%;
+}
+
+.spanel{
+	font-size: 100px;
+	position: absolute;
+	bottom: -18px;
+	left: 40%;
+	-webkit-transform: rotate3d(1,1.5,3, 156deg);
+
+
+}
+
+.batt{
+	position: absolute;
+	/*bottom: -130px;*/
+	font-size: 60px;
+	bottom: -26px;
+	left: 56%;
+
+}
+
+.sun{
+	color: yellow;
+	position: absolute;
+	font-size: 100px;
+
 }
