@@ -101,6 +101,17 @@ var Simulator = (function(){
 			var sunEl = sun.create();
 			var battLevel = 0;
 			var houseUse = 0;
+			
+			$('.energy-btn').click(function(){
+				houseUse-=2
+				console.log('use power',  houseUse)
+					})
+
+			$('.off-btn').click(function(){
+				houseUse+=2
+				console.log('stop use',  houseUse)
+				})
+
 			$('.sky').append(sunEl);
 			 setInterval(function(){
 				sunEl.remove()
@@ -117,23 +128,21 @@ var Simulator = (function(){
 					battLevel = 100
 				}
 				
-// // house stuff
-// 				$('.house').click(function(){
-// 					this+=battLevel
+// house stuff`
+				console.log('one', battLevel)
+					
+				battLevel+=houseUse;
 
-// 				})
-// 				if (houseUse >=1){
-// 					$('.house').css('color', 'orange')
-// 				}
+				console.log('two', battLevel)
 
 
-
-
-				if (battLevel >= 100){
+				if (battLevel >= 95){
 					$('.batt').css("color",'green')
+
 				}
-				else if (battLevel < 100 && battLevel >=50){
+				else if (battLevel < 95 && battLevel >=50){
 					$('.batt').css("color",'yellow')
+					$('.house').css('color', 'orange')
 				}
 				else{
 					$('.batt').css("color",'red')

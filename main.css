@@ -147,9 +147,9 @@ html, body {
 }
 .house{
 	position: absolute;
-	font-size: 200px;
+	font-size: 190px;
 	/*float: right;*/
-	bottom: -85px;
+	bottom: -77px;
 	left:65%;
 }
 
@@ -176,5 +176,21 @@ html, body {
 	color: yellow;
 	position: absolute;
 	/*font-size: 100px;*/
+
+}
+
+
+.energy-btn{
+	/*float: right;*/
+	margin-left: 50px;
+	margin-top: 25px;
+	margin-right: 50px;
+}
+
+.off-btn{
+	/*float: right;*/
+	margin-top: 25px;
+	margin-right: 180px;
+
 
 }
