@@ -156,7 +156,7 @@ html, body {
 .spanel{
 	font-size: 100px;
 	position: absolute;
-	bottom: -18px;
+	bottom: -6px;
 	left: 40%;
 	-webkit-transform: rotate3d(1,1.5,3, 156deg);
 
@@ -165,7 +165,7 @@ html, body {
 
 .batt{
 	position: absolute;
-	/*bottom: -130px;*/
+	color: red;
 	font-size: 60px;
 	bottom: -26px;
 	left: 56%;
@@ -200,6 +200,6 @@ html, body {
 .house-shine{
 	/*border-radius: 25px;*/
     /*border-color: orange;*/
-    text-shadow: 2px 2px yellow;
+    text-shadow: 0px -10px yellow;
 
 }

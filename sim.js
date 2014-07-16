@@ -129,19 +129,19 @@ var Simulator = (function(){
 				}
 				
 // house stuff`
-				console.log('one', battLevel)
+				console.log('prev level', battLevel)
 					
 				battLevel+=houseUse;
 
-				console.log('two', battLevel)
+				console.log('adjusted level', battLevel)
 
 
 				if (battLevel >= 95){
 					$('.batt').css("color",'green')
 
 				}
-				else if (battLevel < 95 && battLevel >=50){
-					$('.batt').css("color",'yellow')
+				else if (battLevel < 95 && battLevel >=60){
+					$('.batt').css("color",'gold')
 					$('.house').css('color', 'orange')
 					$('.house').addClass('house-shine')
 				}
