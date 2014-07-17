@@ -95,7 +95,7 @@ text-decoration: underline;
 .btn-default, .btn-success{
 	outline: none;
 	margin-top: 10px;
-	border-radius: 100px;
+	/*border-radius: 100px;*/
 }
 
 
