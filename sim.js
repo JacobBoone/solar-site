@@ -103,14 +103,13 @@ var Simulator = (function(){
 		var houseUse = 0;
 			
 			$('.energy-btn').click(function(){
-				houseUse-=2
-				$('.house').addClass('house-shine') // need to make is so the power glow turns off when battery = 100% and no energy is in use.
+				houseUse-=2.5
+				$('.house').addClass('house-shine') 
 				console.log('use power',  houseUse)
 					})
 
 			$('.off-btn').click(function(){
-				houseUse+=2
-				// put in condition where removes house on light if 100% but no energy being used
+				houseUse+=2.5
 				console.log('stop use',  houseUse)
 				})
 
