@@ -104,11 +104,13 @@ var Simulator = (function(){
 			
 			$('.energy-btn').click(function(){
 				houseUse-=2
+				$('.house').addClass('house-shine') // need to make is so the power glow turns off when battery = 100% and no energy is in use.
 				console.log('use power',  houseUse)
 					})
 
 			$('.off-btn').click(function(){
 				houseUse+=2
+				// put in condition where removes house on light if 100% but no energy being used
 				console.log('stop use',  houseUse)
 				})
 
@@ -142,8 +144,8 @@ var Simulator = (function(){
 				}
 				else if (battLevel < 95 && battLevel >=60){
 					$('.batt').css("color",'gold')
-					$('.house').css('color', 'orange')
-					$('.house').addClass('house-shine')
+					// $('.house').css('color', 'orange')
+					// $('.house').addClass('house-shine')
 				}
 				else{
 					$('.batt').css("color",'red')
