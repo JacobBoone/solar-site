@@ -97,10 +97,10 @@ var Simulator = (function(){
 
 		// create sun in the sky
 		// for(var i=0; i<NUM_SUNS; i++) {
-			var sun = new Sun();
-			var sunEl = sun.create();
-			var battLevel = 0;
-			var houseUse = 0;
+		var sun = new Sun();
+		var sunEl = sun.create();
+		var battLevel = 0;
+		var houseUse = 0;
 			
 			$('.energy-btn').click(function(){
 				houseUse-=2
@@ -114,47 +114,51 @@ var Simulator = (function(){
 				console.log('stop use',  houseUse)
 				})
 
+		$('.sky').append(sunEl);
+
+		 setInterval(function(){
+			sunEl.remove()
+			var sumRays = sun.getRays();
+			battLevel+=sumRays;
+			console.log(battLevel)
+			var sunSize = sumRays*10;
+			// console.log(sunSize)
+			sunEl.css('font-size', sunSize)
 			$('.sky').append(sunEl);
-			 setInterval(function(){
-				sunEl.remove()
-				var sumRays = sun.getRays();
-				battLevel+=sumRays;
-				console.log(battLevel)
-				var sunSize = sumRays*10;
-				// console.log(sunSize)
-				sunEl.css('font-size', sunSize)
-				$('.sky').append(sunEl);
-				console.log(sumRays)
+			console.log(sumRays)
 
-				if (battLevel > 100){
-					battLevel = 100
-				}
+			if (battLevel > 100){
+				battLevel = 100
+			}
+			
+// house stuff
+			console.log('prev level', battLevel)
 				
-// house stuff`
-				console.log('prev level', battLevel)
-					
-				battLevel+=houseUse;
+			battLevel+=houseUse;
 
-				console.log('adjusted level', battLevel)
+			console.log('adjusted level', battLevel)
 
+			if (houseUse >= 0){
+				$('.house').removeClass('house-shine')
+			}
 
-				if (battLevel >= 95){
-					$('.batt').css("color",'green')
+			if (battLevel >= 95){
+				$('.batt').css("color",'green')
 
-				}
-				else if (battLevel < 95 && battLevel >=60){
-					$('.batt').css("color",'gold')
-					// $('.house').css('color', 'orange')
-					// $('.house').addClass('house-shine')
-				}
-				else{
-					$('.batt').css("color",'red')
-					$('.house').css('color', 'black')
-					$('.house').removeClass('house-shine')
-					// $('.house').addClass('house-shine')
+			}
+			else if (battLevel < 95 && battLevel >=60){
+				$('.batt').css("color",'gold');
+				// $('.house').css('color', 'orange')
+				// $('.house').addClass('house-shine')
+			}
+			else{
+				$('.batt').css("color",'red')
+				$('.house').css('color', 'black')
+				$('.house').removeClass('house-shine')
+				// $('.house').addClass('house-shine')
 
-				}
-			},2000);
+			}
+		},2000);
 
 			suns.push(sun);
 			
